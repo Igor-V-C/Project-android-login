@@ -37,8 +37,74 @@ public class Login extends AppCompatActivity {
         edtSenha = findViewById(R.id.editTextSenha);
 
         Button btnLogin = findViewById(R.id.botao);
+        Button btnCadastro = findViewById(R.id.botao2);
 
         btnLogin.setOnClickListener(v -> fazerLogin());
+        btnCadastro.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                    Intent intent = new Intent(Login.this, Cadastro.class);
+                    startActivity(intent);
+
+            }});
+        configurarOlhoSenha(edtSenha);
+
+    }
+    private void configurarOlhoSenha(EditText campoSenha) {
+
+        campoSenha.setOnTouchListener((v, event) -> {
+
+            if (campoSenha.getCompoundDrawablesRelative()[2] == null) {
+                return false;
+            }
+
+            int drawableWidth =
+                    campoSenha.getCompoundDrawablesRelative()[2].getBounds().width();
+
+            float limite =
+                    campoSenha.getWidth()
+                            - campoSenha.getPaddingEnd()
+                            - drawableWidth
+                            - campoSenha.getCompoundDrawablePadding();
+
+            boolean tocouNoOlho = event.getX() >= limite;
+
+            if (!tocouNoOlho) {
+                return false;
+            }
+
+            switch (event.getAction()) {
+
+                case android.view.MotionEvent.ACTION_DOWN:
+
+                    campoSenha.setInputType(
+                            android.text.InputType.TYPE_CLASS_TEXT
+                                    | android.text.InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                    );
+
+                    campoSenha.setSelection(
+                            campoSenha.getText().length()
+                    );
+
+                    return true;
+
+                case android.view.MotionEvent.ACTION_UP:
+                case android.view.MotionEvent.ACTION_CANCEL:
+
+                    campoSenha.setInputType(
+                            android.text.InputType.TYPE_CLASS_TEXT
+                                    | android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD
+                    );
+
+                    campoSenha.setSelection(
+                            campoSenha.getText().length()
+                    );
+
+                    return true;
+            }
+
+            return false;
+        });
     }
 
     private void fazerLogin() {
@@ -75,8 +141,8 @@ public class Login extends AppCompatActivity {
                                 Toast.LENGTH_LONG
                         ).show()
                 );
-
-                return;
+                Intent intent = new Intent(Login.this, Cadastro.class);
+                startActivity(intent);
             }
 
             boolean senhaCorreta =
@@ -93,8 +159,10 @@ public class Login extends AppCompatActivity {
                                 "Senha incorreta.",
                                 Toast.LENGTH_LONG
                         ).show()
-                );
 
+                );
+                Intent intent = new Intent(Login.this, Cadastro.class);
+                startActivity(intent);
                 return;
             }
 

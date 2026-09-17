@@ -18,6 +18,7 @@ public class Cadastro extends AppCompatActivity {
     private EditText edtEmail;
     private EditText edtTelefone;
     private EditText edtNome;
+    private String fotoPath;
     private EditText edtDataNascimento;
     private EditText edtEndereco;
     private EditText edtCidade;
@@ -46,11 +47,77 @@ public class Cadastro extends AppCompatActivity {
         edtCidade = findViewById(R.id.edtCidadeCadastro);
         edtEstado = findViewById(R.id.edtEstadoCadastro);
 
+
+        configurarOlhoSenha(edtSenha);
         Button btnCadastrar =
                 findViewById(R.id.btnCadastrar);
 
         btnCadastrar.setOnClickListener(v -> cadastrar());
     }
+    public String getFotoPath() {
+        return fotoPath;
+    }
+
+    public void setFotoPath(String fotoPath) {
+        this.fotoPath = fotoPath;
+    }
+    private void configurarOlhoSenha(EditText campoSenha) {
+
+        campoSenha.setOnTouchListener((v, event) -> {
+
+            if (campoSenha.getCompoundDrawablesRelative()[2] == null) {
+                return false;
+            }
+
+            int drawableWidth =
+                    campoSenha.getCompoundDrawablesRelative()[2].getBounds().width();
+
+            float limite =
+                    campoSenha.getWidth()
+                            - campoSenha.getPaddingEnd()
+                            - drawableWidth
+                            - campoSenha.getCompoundDrawablePadding();
+
+            boolean tocouNoOlho = event.getX() >= limite;
+
+            if (!tocouNoOlho) {
+                return false;
+            }
+
+            switch (event.getAction()) {
+
+                case android.view.MotionEvent.ACTION_DOWN:
+
+                    campoSenha.setInputType(
+                            android.text.InputType.TYPE_CLASS_TEXT
+                                    | android.text.InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                    );
+
+                    campoSenha.setSelection(
+                            campoSenha.getText().length()
+                    );
+
+                    return true;
+
+                case android.view.MotionEvent.ACTION_UP:
+                case android.view.MotionEvent.ACTION_CANCEL:
+
+                    campoSenha.setInputType(
+                            android.text.InputType.TYPE_CLASS_TEXT
+                                    | android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD
+                    );
+
+                    campoSenha.setSelection(
+                            campoSenha.getText().length()
+                    );
+
+                    return true;
+            }
+
+            return false;
+        });
+    };
+
 
     private void cadastrar() {
 
