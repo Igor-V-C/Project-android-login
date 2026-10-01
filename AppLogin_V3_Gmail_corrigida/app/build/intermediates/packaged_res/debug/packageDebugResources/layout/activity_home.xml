@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <ImageView
+            android:id="@+id/imgFotoHome"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerCrop"
+            android:src="@android:drawable/ic_menu_camera"
+            android:contentDescription="Foto do usuário"
+            android:layout_marginBottom="22dp"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Nome" android:textStyle="bold"/>
+        <TextView android:id="@+id/txtNome" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="18sp" android:layout_marginBottom="14dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Usuário" android:textStyle="bold"/>
+        <TextView android:id="@+id/txtUsuario" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="18sp" android:layout_marginBottom="14dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="E-mail" android:textStyle="bold"/>
+        <TextView android:id="@+id/txtEmail" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="18sp" android:layout_marginBottom="14dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Telefone" android:textStyle="bold"/>
+        <TextView android:id="@+id/txtTelefone" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="18sp" android:layout_marginBottom="14dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Data de nascimento" android:textStyle="bold"/>
+        <TextView android:id="@+id/txtDataNascimento" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="18sp" android:layout_marginBottom="14dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Endereço" android:textStyle="bold"/>
+        <TextView android:id="@+id/txtEndereco" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="18sp" android:layout_marginBottom="14dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cidade" android:textStyle="bold"/>
+        <TextView android:id="@+id/txtCidade" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="18sp" android:layout_marginBottom="14dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Estado" android:textStyle="bold"/>
+        <TextView android:id="@+id/txtEstado" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="18sp" android:layout_marginBottom="24dp"/>
+
+        <Button
+            android:id="@+id/btnVoltarMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Voltar para a Main"/>
+    </LinearLayout>
+</ScrollView>

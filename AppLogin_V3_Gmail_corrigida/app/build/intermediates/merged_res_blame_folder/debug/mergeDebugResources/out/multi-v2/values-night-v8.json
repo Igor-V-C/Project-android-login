@@ -1,0 +1,43 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.example.applogin.app-mergeDebugResources-21:/values-night-v8/values-night-v8.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\igorv\\.gradle\\caches\\8.13\\transforms\\d04cd760c390b295ec90b0a8bb8f4581\\transformed\\appcompat-1.6.1\\res\\values-night-v8\\values-night-v8.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,125,209,293,389,491,593,687",
+                        "endColumns": "69,83,83,95,101,101,93,88",
+                        "endOffsets": "120,204,288,384,486,588,682,771"
+                    },
+                    "to": {
+                        "startLines": "3,4,5,6,7,8,9,11",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "141,211,295,379,475,577,679,837",
+                        "endColumns": "69,83,83,95,101,101,93,88",
+                        "endOffsets": "206,290,374,470,572,674,768,921"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\igorv\\AndroidStudioProjects\\AppLogin_V3_Gmail_corrigida\\app\\src\\main\\res\\values-night\\themes.xml",
+                    "from": {
+                        "startLines": "1,2",
+                        "startColumns": "4,4",
+                        "startOffsets": "16,103",
+                        "endColumns": "86,64",
+                        "endOffsets": "98,163"
+                    },
+                    "to": {
+                        "startLines": "2,10",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,773",
+                        "endColumns": "85,63",
+                        "endOffsets": "136,832"
+                    }
+                }
+            ]
+        }
+    ]
+}
